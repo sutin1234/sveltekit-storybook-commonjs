@@ -1,4 +1,3 @@
-
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -9,7 +8,10 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-svelte-csf"
   ],
-  "svelteOptions": {
-    "preprocess": require("../svelte.config.cjs").preprocess
+  "core": {
+    "builder": "storybook-builder-vite"
+  },
+  "svelteOptions": { 
+    preprocess: import("../svelte.config.js").preprocess 
   }
 }
